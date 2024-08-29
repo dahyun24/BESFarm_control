@@ -158,8 +158,8 @@ int main() {
             std::cerr << "Insufficient data received" << std::endl;
         }
 
-        // 20분 대기 (300000000μs)
-        usleep(1200000000);
+        // 30분 대기 (300000000μs)
+        usleep(1800000000);
     }
 
     close(serialPort);
