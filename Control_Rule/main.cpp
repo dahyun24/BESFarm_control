@@ -58,7 +58,7 @@ void printStatus() {
     std::string message = prepareMessage(isFanOn, isWindowOpen, isCoolingOn, isHeatingOn, now);
 
     // 메시지를 구동기 노드로 전달
-    writeNode(message);
+    writeNode(isFanOn, isWindowOpen, isCoolingOn, isHeatingOn, now);
 }
 
 int main() {

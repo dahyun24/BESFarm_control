@@ -3,6 +3,6 @@
 
 #include <string>
 
-void writeNode(const std::string &message);
+void writeNode(bool isFanOn, bool isWindowOpen, bool isCoolingOn, bool isHeatingOn, std::time_t now);
 
 #endif
