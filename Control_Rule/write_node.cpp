@@ -55,13 +55,12 @@ void run_server() {
     // 9 ~ 100은 예비용(추후 확장 가능)
     
     for (int i = 101; i <= 116; ++i) { // 사용 않는 것을 0x00으로 수정해야
-		mb_mapping->tab_registers[i] = 102; // 스위치형 구동기 디바이스 코드(102)
-	}
-	
+	    mb_mapping->tab_registers[i] = 102; // 스위치형 구동기 디바이스 코드(102)
+    }
 	for (int i = 117; i <= 124; ++i) {
 		mb_mapping->tab_registers[i] = 112; // 개폐형 구동기 디바이스 코드(112)
 	}
-    함
+	
     mb_mapping->tab_registers[201] = 2.0; // OPID #0 ??
     mb_mapping->tab_registers[202] = 2.0; // 구동기 노드 상태 ??
     
@@ -70,13 +69,13 @@ void run_server() {
     
     // 구동기 상태 정보
     for (int i = 203; i <= 298; ) {
-		mb_mapping->tab_registers[i++] = 0x0000; // OPID; 16비트 0으로 초기화
-		mb_mapping->tab_registers[i++] = 0x0000; // 스위치 상태; 16비트 0으로 초기화
+	mb_mapping->tab_registers[i++] = 0x0000; // OPID; 16비트 0으로 초기화
+	mb_mapping->tab_registers[i++] = 0x0000; // 스위치 상태; 16비트 0으로 초기화
 		
-		unit32_t value_32bit = 0x00000000; //스위치 남은동작시간; 32비트 0으로 초기화
-		mb_mapping->tab_registers[i++] = value_32bit & 0xFFFF; // 하위 16비트를 추출하기 위한 연
-		mb_mapping->tab_registers[i++] = (value_32bit >> 16) & 0xFFFF; // 상위 16비트를 추출하기 위한 연산
-	}
+	unit32_t value_32bit = 0x00000000; //스위치 남은동작시간; 32비트 0으로 초기화
+	mb_mapping->tab_registers[i++] = value_32bit & 0xFFFF; // 하위 16비트를 추출하기 위한 연
+	mb_mapping->tab_registers[i++] = (value_32bit >> 16) & 0xFFFF; // 상위 16비트를 추출하기 위한 연산
+    }
 	
 	///////////////////////////////////////////////구동기 상태 정보////////////////////////////////////////////////
 	
