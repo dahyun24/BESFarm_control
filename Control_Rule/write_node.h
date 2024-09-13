@@ -6,5 +6,6 @@
 #include <modbus/modbus.h> 
 
 void writeNode(bool isFanOn, bool isWindowOpen, bool isCoolingOn, bool isHeatingOn, std::time_t now);
+void cleanUpModbus();
 
 #endif
