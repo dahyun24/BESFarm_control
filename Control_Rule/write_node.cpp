@@ -1,11 +1,10 @@
-#include <iostream>
-#include <string>
-#include <ctime>
 #include <modbus/modbus.h>
+#include <iostream>
+#include <thread>
+#include <chrono>
 #include <cstring>
 #include <cerrno>
-#include <thread>
-#include "write_node.h"
+#include <cstdint>
 
 // 전역 변수
 modbus_t *ctx = nullptr;
