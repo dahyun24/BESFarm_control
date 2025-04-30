@@ -49,9 +49,23 @@ KS3267 표준 기반 RS485 Modbus RTU 통신을 이용해 **센서-제어기-구
 
 ---
 
-## 📂 branch 설명
-1. main <br>
-2. controller 제어기  <br>
-2.1 feature/sensor : 센서 데이터를 받아오는 과정 <br>
-2.2 feature/rule_map : db에서 센서 데이터를 받아와서 제어룰에 따른 명령을 구동기 노드로 보내는 과정 (main.cpp + control.cpp + prepare_message.cpp + wirtenode.cpp) <br>
-3. actuator 구동기 노드
+## 📂 파일 구조
+BESFarm_control/
+├── controller/                          # 제어기 관련 코드
+│   ├── sensor/                          # 센서 데이터 수집
+│   │   └── sensor_node.cpp              # 센서 값을 읽는 코드
+│   └── rule_map/                        # 제어 룰 처리
+│       └── Control_Rule/                # 제어 로직 구현 파일들
+│           ├── main.cpp
+│           ├── SensorController.h
+│           ├── SensorController.cpp
+│           ├── writenode.h
+│           └── writenode.cpp
+│
+├── actuator/                            # 구동기 관련 코드
+│   └── actuator.cpp
+│
+├── db/                                  # MariaDB 테이블 정의
+│   └── init.sql
+└── README.md                            # 프로젝트 소개 문서
+
