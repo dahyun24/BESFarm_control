@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-o",
+                "ControlRule",
+                "main.cpp",
+                "write_node.cpp",
+                "prepare_message.cpp",
+                "-lmysqlclient",  // MySQL 클라이언트 라이브러리 링크
+                "-std=c++11"       // C++11 표준을 사용하여 컴파일
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "컴파일러를 사용하여 C++ 파일을 빌드합니다."
+        }
+    ]
+}
