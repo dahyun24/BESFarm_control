@@ -13,19 +13,21 @@ KS3267 표준 기반 RS485 Modbus RTU 통신을 이용해 **센서-제어기-구
   - `C++`, `Python`
   - `MariaDB`
   - `RS485`, `Modbus RTU` (KS3267 표준)
-  - `Raspberry Pi`
+  - `Raspberry Pi 4B`
 
 ---
 
 ## 🧩 시스템 구성
 
-- **센서 노드:** 온도/습도/CO₂ 센서 → RS485 통신
+- **센서 노드:** 온도/습도/CO₂ 측정 가능한 SH-VT260 센서 → RS485 통신
 - **제어기 노드 (Raspberry Pi):**
   - Modbus 프로토콜로 센서 데이터 수집
   - MariaDB에 데이터 저장
   - 제어 룰 기반으로 제어 명령 생성
   - 명령을 구동기로 전송
-- **구동기 노드:** 펌프, 팬, 히터 등 작동 → 명령 수신 후 작동
+- **구동기 노드:** 펌프, 팬, 히터 등 작동 → 명령 수신 후 작동 (신호등 센서로 동작 확인)
+
+  ![설계도](https://github.com/user-attachments/assets/bf735c52-4014-47ec-8051-8ab739bc1809)
 
 ---
 
