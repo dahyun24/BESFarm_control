@@ -50,6 +50,7 @@ KS3267 표준 기반 RS485 Modbus RTU 통신을 이용해 **센서-제어기-구
 ---
 
 ## 📂 파일 구조
+```
 BESFarm_control/
 ├── controller/                          # 제어기 관련 코드
 │   ├── sensor/                          # 센서 데이터 수집
